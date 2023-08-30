@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ### Primary */
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background: hsl(192, 100%, 67%), hsl(280, 87%, 65%);
+}
+.light {
+  /* ### Light Theme */
+  --bg-box: hsl(0, 0%, 100%);
+  --bg-box-list: hsl(0, 0%, 100%);
+
+  --bg-todo-box: hsl(0, 0%, 98%);
+  --clr-txt: hsl(236, 33%, 92%);
+  --clr-completed: hsl(233, 11%, 84%);
+  --clr-footer-todo: hsl(236, 9%, 61%);
+  --clr-todo-txt: hsl(235, 19%, 35%);
+}
+
+.dark {
+  /* ### Dark Theme */
+  --bg-box: hsl(235, 21%, 11%);
+  --clr-box: hsl(234, 39%, 85%);
+  --bg-box-list: hsl(235, 24%, 19%);
+  /*  (hover) */
+  --bg-todo-box: hsl(235, 21%, 11%);
+
+  --clr-footer-todo: hsl(234, 11%, 52%);
+  --clr-completed: hsl(233, 14%, 35%);
+  --clr-txt: hsl(237, 14%, 26%);
+  --clr-todo-txt: hsl(0, 0%, 100%);
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+* {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: inherit;
+}
+.wrapper {
+  background-color: var(--bg-todo-box);
+  @apply relative z-10 min-h-screen text-center;
+}
+.wrapper::before {
+  content: "";
+  @apply absolute top-0 left-0 bg-mobile-light sm:bg-desktop-light bg-no-repeat bg-center bg-cover w-full h-[30vh] z-0;
+}
+.dark::before {
+  content: "";
+  @apply bg-mobile-dark sm:bg-desktop-dark;
+}
+.main__container {
+  @apply w-[90vw] md:w-[50rem] lg:w-[60rem] mx-auto relative z-10 top-80;
+}
+header {
+  @apply flex items-center justify-between mb-12;
+}
+.header__title {
+  @apply text-5xl lg:text-6xl font-bold tracking-[1rem] text-white;
+}
+.toggle__theme,
+.item__circle,
+.todo__item {
+  @apply hover:cursor-pointer;
+}
+form {
+  background-color: var(--bg-box-list);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+  @apply pl-24  rounded-xl relative grid place-items-start overflow-hidden mb-6 lg:mb-8;
+}
+
+.circle {
+  border: 1px solid var(--clr-completed);
+  @apply absolute top-1/2 left-12 translate-x-[-50%] translate-y-[-50%] w-10 h-10 rounded-full;
+}
+.input__todo {
+  background-color: var(--bg-box-list);
+  color: var(--clr-todo-txt);
+  @apply text-2xl w-full py-7 lg:p-8;
+}
+.todo__container {
+  @apply relative;
+}
+.todo__list {
+  @apply rounded-tl-xl rounded-tr-xl overflow-hidden;
+}
+.wrap__todo {
+  @apply flex items-center justify-center gap-8;
+}
+.item__circle {
+  border: 1px solid var(--clr-completed);
+  @apply relative w-10 h-10 rounded-full;
+}
+.item__circle img {
+  @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
+}
+.todo__txt {
+  color: var(--clr-todo-txt);
+  @apply text-2xl;
+}
+.completed {
+  color: var(--clr-completed);
+}
+.todo__item {
+  background-color: var(--bg-box-list);
+  border-bottom: 1px solid var(--clr-completed);
+  color: var(--clr-todo-txt);
+  @apply flex items-center justify-between p-7 lg:py-8;
+}
+
+.todo__item .btn__delete {
+  @apply invisible;
+}
+.todo__item:hover .btn__delete {
+  @apply visible;
+}
+.todo__option {
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-box-list);
+  @apply flex items-center justify-between p-7 lg:py-8 rounded-bl-xl rounded-br-xl text-xl text-Dark-Grayish-Blue-light mb-6 lg:mb-12 relative;
+}
+.item__count {
+  @apply text-2xl;
+}
+.filter__todo {
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-box-list);
+  @apply flex items-center justify-center gap-10 w-full  p-7  rounded-xl font-bold text-2xl text-Dark-Grayish-Blue-light mb-10 md:absolute md:bottom-2 md:left-1/2 md:translate-x-[-50%] md:translate-y-[-50%] md:m-0 md:bg-transparent md:p-0 md:w-[30%] md:shadow-none;
+}
+.item:hover,
+.clear__completed:hover {
+  color: var(--clr-todo-txt);
+  @apply hover:cursor-pointer;
+}
+.drag_drop_list {
+  @apply text-Dark-Grayish-Blue-light text-center text-2xl;
+}
