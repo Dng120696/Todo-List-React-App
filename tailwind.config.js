@@ -19,10 +19,10 @@ export default {
         "Very-Dark-Grayish-Blue-Dark-2": "hsl(237, 14%, 26%)",
       },
       backgroundImage: {
-        "mobile-dark": "url('./images/bg-mobile-dark.jpg')",
-        "mobile-light": "url('./images/bg-mobile-light.jpg')",
-        "desktop-dark": "url('./images/bg-desktop-dark.jpg')",
-        "desktop-light": "url('./images/bg-desktop-light.jpg')",
+        "mobile-dark": "url('./assets/bg-mobile-dark.jpg')",
+        "mobile-light": "url('./assets/bg-mobile-light.jpg')",
+        "desktop-dark": "url('./assets/bg-desktop-dark.jpg')",
+        "desktop-light": "url('./assets/bg-desktop-light.jpg')",
         "gradient-hsl":
           "linear-gradient(to bottom right, hsl(192, 100%, 67%), hsl(280, 87%, 65%))",
       },
