@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DragList } from "./DragList";
 import { FilterTodo } from "./FilterTodo";
 import { TodoOption } from "./TodoOption";
@@ -6,11 +6,13 @@ import { TodoList } from "./TodoList";
 import { TodoContainer } from "./TodoContainer";
 import { Form } from "./Form";
 import { Header } from "./Header";
-import { data } from "./data";
+// import { data } from "./data";
 
 export function Main({ isDark, onSetDark }) {
   const [todoVal, setTodoVal] = useState("");
-  const [todoItem, setTodoItem] = useState(data);
+  const [todoItem, setTodoItem] = useState(
+    JSON.parse(localStorage.getItem("data"))
+  );
   const [active, setActive] = useState("All");
 
   const filterAll = todoItem;
@@ -24,6 +26,10 @@ export function Main({ isDark, onSetDark }) {
   };
 
   const itemLength = itemList[active].length;
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(todoItem));
+  }, [todoItem]);
 
   function handleActive(list) {
     setActive(list);
