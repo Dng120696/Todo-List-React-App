@@ -11,10 +11,9 @@ import { Header } from "./Header";
 export function Main({ isDark, onSetDark }) {
   const [todoVal, setTodoVal] = useState("");
   const [todoItem, setTodoItem] = useState(
-    JSON.parse(localStorage.getItem("data"))
+    JSON.parse(localStorage.getItem("data")) ?? []
   );
   const [active, setActive] = useState("All");
-
   const filterAll = todoItem;
   const filterActiveItem = todoItem.filter((item) => !item.isCompleted);
   const filterCompletedItem = todoItem.filter((item) => item.isCompleted);
