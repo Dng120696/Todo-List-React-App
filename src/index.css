@@ -50,14 +50,14 @@ html {
 }
 .wrapper::before {
   content: "";
-  @apply absolute top-0 left-0 bg-mobile-light sm:bg-desktop-light bg-no-repeat bg-center bg-cover w-full h-[30vh] z-0;
+  @apply absolute top-0 left-0 bg-mobile-light sm:bg-desktop-light bg-no-repeat bg-center bg-cover w-full h-[40rem] z-0;
 }
 .dark::before {
   content: "";
   @apply bg-mobile-dark sm:bg-desktop-dark;
 }
 .main__container {
-  @apply w-[90vw] md:w-[50rem] lg:w-[60rem] mx-auto relative z-10 top-80;
+  @apply w-[90%] md:w-[50rem] lg:w-[60rem] mx-auto relative z-10 top-80;
 }
 header {
   @apply flex items-center justify-between mb-12;
